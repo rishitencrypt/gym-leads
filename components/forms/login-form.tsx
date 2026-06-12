@@ -28,9 +28,10 @@ export function LoginForm() {
     const supabase = createClient();
     const { error: authError } = await supabase.auth.signInWithPassword(values);
     if (authError) {
-      setError("Invalid email or password.");
-      return;
-    }
+  console.error("LOGIN ERROR:", authError);
+  setError(authError.message);
+  return;
+}
     router.push(searchParams.get("redirect") ?? "/dashboard");
     router.refresh();
   }
