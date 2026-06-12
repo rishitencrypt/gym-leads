@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { supabaseAdmin } from "@/lib/supabase/admin";
 import {
   assessmentSchema,
   bmiLeadSchema,
@@ -20,14 +21,9 @@ const GENERIC_ERROR =
   "Something went wrong. Please try again or contact us on WhatsApp.";
 
 async function insertLead(payload: Record<string, unknown>) {
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  return supabase
+  return supabaseAdmin
     .from("leads")
-    .insert({ ...payload, user_id: user?.id ?? null })
+    .insert(payload)
     .select("id")
     .single();
 }
@@ -51,7 +47,13 @@ export async function submitTrialBooking(
     goal,
     source: "trial_booking",
   });
-  if (leadError) return { success: false, error: GENERIC_ERROR };
+  if (leadError) {
+    console.error("LEAD ERROR:", leadError);
+    return {
+      success: false,
+      error: JSON.stringify(leadError, null, 2),
+    };
+  }
 
   const { error } = await supabase.from("trial_bookings").insert({
     lead_id: lead.id,
@@ -62,7 +64,13 @@ export async function submitTrialBooking(
     goal,
     preferred_date: preferredDate || null,
   });
-  if (error) return { success: false, error: GENERIC_ERROR };
+  if (error) {
+    console.error("TRIAL ERROR:", error);
+    return {
+      success: false,
+      error: JSON.stringify(error, null, 2),
+    };
+  }
 
   return { success: true };
 }
