@@ -1,7 +1,7 @@
 export const siteConfig = {
 // Branding
-gymName: "IronForge Fitness",
-gymShortName: "IronForge",
+gymName: "Titan Gym",
+gymShortName: "Titan",
 
 // Marketing
 tagline: "Elite coaching, world-class equipment and programs that deliver.",
