@@ -4,6 +4,8 @@ import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { ExitIntentPopup } from "@/components/site/exit-intent-popup";
+// Ignore TS complaint about side-effect CSS import in the Next.js app directory
+// @ts-ignore
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
