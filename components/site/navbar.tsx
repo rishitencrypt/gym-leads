@@ -7,6 +7,7 @@ import { Dumbbell, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
+import { siteConfig } from "@/lib/site-config";
 
 const links = [
   { href: "/#benefits", label: "Why Us" },
@@ -40,7 +41,7 @@ export function Navbar() {
             <Dumbbell className="h-5 w-5 text-white" />
           </span>
           <span className="font-display text-lg font-extrabold uppercase tracking-tight">
-            Iron<span className="text-primary">Forge</span>
+            {siteConfig.gymShortName}
           </span>
         </Link>
 

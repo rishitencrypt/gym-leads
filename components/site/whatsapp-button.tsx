@@ -4,8 +4,10 @@ import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export function WhatsAppButton() {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
-  if (!number) return null;
+ const number =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ??
+  siteConfig.whatsapp;
+
 
   const message = encodeURIComponent(
     `Hi ${siteConfig.gymShortName}! I would like to know more about membership and the free trial.`

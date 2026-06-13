@@ -10,7 +10,7 @@ ctaText: "Book your free trial session",
 // Contact
 phone: "+91 9876543210",
 whatsapp: "919876543210",
-email: "info@ironforgefitness.com",
+email: "titangym@gmail.com",
 address: "Varanasi, Uttar Pradesh",
 } as const;
 
