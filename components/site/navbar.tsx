@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { siteConfig } from "@/lib/site-config";
+import Image from "next/image";
 
 const links = [
   { href: "/#benefits", label: "Why Us" },
@@ -37,9 +38,15 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary">
-            <Dumbbell className="h-5 w-5 text-white" />
-          </span>
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-md">
+  <Image
+    src="/gym.jpg"
+    alt={siteConfig.gymName}
+    width={40}
+    height={40}
+    className="h-10 w-10 object-cover"
+  />
+</span>
           <span className="font-display text-lg font-extrabold uppercase tracking-tight">
             {siteConfig.gymShortName}
           </span>

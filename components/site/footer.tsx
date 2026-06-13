@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Dumbbell } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,9 +9,15 @@ export function Footer() {
       <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-              <Dumbbell className="h-4 w-4 text-white" />
-            </span>
+            <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-md">
+  <Image
+    src="/gym.jpg"
+    alt={siteConfig.gymName}
+    width={32}
+    height={32}
+    className="h-8 w-8 object-cover"
+  />
+</span>
             <span className="font-display text-base font-extrabold uppercase">
               {siteConfig.gymShortName}
             </span>
