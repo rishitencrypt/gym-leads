@@ -1,6 +1,7 @@
 import { Dumbbell, HeartPulse, Users, Clock, Trophy, Salad } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/site/motion";
+import { siteConfig } from "@/lib/site-config";
 
 const benefits = [
   {
@@ -39,7 +40,7 @@ export function Benefits() {
   return (
     <section id="benefits" className="container py-20 sm:py-28">
       <Reveal className="max-w-2xl">
-        <span className="section-eyebrow">Why IronForge</span>
+        <span className="section-eyebrow">Why {siteConfig.gymShortName}</span>
         <h2 className="section-heading">Everything You Need to Win</h2>
         <p className="mt-4 text-muted-foreground">
           We removed every excuse between you and your best shape. What is

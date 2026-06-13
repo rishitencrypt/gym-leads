@@ -1,13 +1,14 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export function WhatsAppButton() {
   const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
   if (!number) return null;
 
   const message = encodeURIComponent(
-    "Hi IronForge! I would like to know more about membership and the free trial."
+    `Hi ${siteConfig.gymShortName}! I would like to know more about membership and the free trial.`
   );
 
   return (

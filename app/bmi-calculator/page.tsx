@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
 import { createClient } from "@/lib/supabase/server";
 import { BmiCalculator } from "@/components/forms/bmi-calculator";
 
 export const metadata: Metadata = {
   title: "Free BMI Calculator",
   description:
-    "Calculate your BMI instantly and get a free personalised starting plan from an IronForge coach.",
+    `Calculate your BMI instantly and get a free personalised starting plan from a ${siteConfig.gymShortName} coach.`,
 };
 
 export default async function BmiCalculatorPage() {

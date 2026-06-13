@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Dumbbell } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -55,7 +56,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border py-5">
         <p className="container text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} IronForge Fitness. All rights reserved.
+          &copy; {new Date().getFullYear()} {siteConfig.gymName}. All rights reserved.
         </p>
       </div>
     </footer>

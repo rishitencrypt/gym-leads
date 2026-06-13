@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
 import { AssessmentQuiz } from "@/components/forms/assessment-quiz";
 
 export const metadata: Metadata = {
   title: "Fitness Assessment Quiz",
   description:
-    "Answer a few questions about your goals and get a personalised program recommendation from IronForge Fitness.",
+    `Answer a few questions about your goals and get a personalised program recommendation from ${siteConfig.gymName}.`
 };
 
 export default function AssessmentPage() {

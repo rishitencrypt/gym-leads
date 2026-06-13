@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
 import { Card, CardContent } from "@/components/ui/card";
 import { ConsultationForm } from "@/components/forms/consultation-form";
 
 export const metadata: Metadata = {
   title: "Free Consultation",
   description:
-    "Talk to an IronForge coach about your goals, free of charge. We will call you within one business day.",
+    `Talk to a ${siteConfig.gymShortName} coach about your goals, free of charge. We will call you within one business day.`
 };
 
 export default function ConsultationPage() {

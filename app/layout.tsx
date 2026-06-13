@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
 import { Archivo, Inter } from "next/font/google";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
@@ -20,24 +21,23 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "IronForge Fitness | Premium Gym & Personal Training",
-    template: "%s | IronForge Fitness",
-  },
+  default: `${siteConfig.gymName} | Premium Gym & Personal Training`,
+  template: `%s | ${siteConfig.gymName}`,
+},
   description:
-    "Elite coaching, world-class equipment and programs that deliver. Book your free trial session at IronForge Fitness today.",
+  `${siteConfig.tagline} Book your free trial session at ${siteConfig.gymName} today.`,
   keywords: ["gym", "fitness", "personal training", "free trial", "weight loss", "muscle gain"],
   openGraph: {
     type: "website",
-    siteName: "IronForge Fitness",
-    title: "IronForge Fitness | Premium Gym & Personal Training",
+    siteName: siteConfig.gymName,
+    title: `${siteConfig.gymName} | Premium Gym & Personal Training`,
     description:
-      "Elite coaching, world-class equipment and programs that deliver. Book your free trial session today.",
-    url: siteUrl,
+      `${siteConfig.tagline} Book your free trial session today.`,
   },
   twitter: {
     card: "summary_large_image",
-    title: "IronForge Fitness",
-    description: "Book your free trial session at IronForge Fitness today.",
+    title: siteConfig.gymName,
+    description: `Book your free trial session at ${siteConfig.gymName} today.`,
   },
   robots: { index: true, follow: true },
 };

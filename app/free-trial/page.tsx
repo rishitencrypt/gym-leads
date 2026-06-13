@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
 import { Card, CardContent } from "@/components/ui/card";
 import { TrialBookingForm } from "@/components/forms/trial-booking-form";
 import { CheckCircle2 } from "lucide-react";
@@ -6,7 +7,7 @@ import { CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Book Your Free Trial",
   description:
-    "Claim a free training session at IronForge Fitness. No payment details, no contracts, no pressure.",
+    `Claim a free training session at ${siteConfig.gymName}. No payment details, no contracts, no pressure.`
 };
 
 const included = [
