@@ -12,7 +12,7 @@ export function Footer() {
               <Dumbbell className="h-4 w-4 text-white" />
             </span>
             <span className="font-display text-base font-extrabold uppercase">
-              Iron<span className="text-primary">Forge</span>
+              {siteConfig.gymShortName}
             </span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
@@ -46,7 +46,7 @@ export function Footer() {
             Visit Us
           </h4>
           <p className="text-sm text-muted-foreground">
-            12 Forge Street, Downtown
+            {siteConfig.address}
             <br />
             Open Mon - Sat, 5:30 AM - 11:00 PM
             <br />

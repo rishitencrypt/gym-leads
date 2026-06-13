@@ -2,11 +2,12 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/site/motion";
 import { ConsultationForm } from "@/components/forms/consultation-form";
+import { siteConfig } from "@/lib/site-config";
 
 const details = [
-  { icon: MapPin, label: "Address", value: "12 Forge Street, Downtown" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 014-7788" },
-  { icon: Mail, label: "Email", value: "hello@ironforge.fit" },
+  { icon: MapPin, label: "Address", value: siteConfig.address },
+  { icon: Phone, label: "Phone", value: siteConfig.phone },
+  { icon: Mail, label: "Email", value: siteConfig.email },
   { icon: Clock, label: "Hours", value: "Mon-Sat 5:30-23:00, Sun 7:00-14:00" },
 ];
 
